@@ -63,7 +63,7 @@ Partial Class Productos
         Me.grbDatos.Controls.Add(Me.lblCategoria)
         Me.grbDatos.Location = New System.Drawing.Point(27, 12)
         Me.grbDatos.Name = "grbDatos"
-        Me.grbDatos.Size = New System.Drawing.Size(687, 424)
+        Me.grbDatos.Size = New System.Drawing.Size(464, 309)
         Me.grbDatos.TabIndex = 0
         Me.grbDatos.TabStop = False
         Me.grbDatos.Text = "Datos de Productos"
@@ -157,7 +157,7 @@ Partial Class Productos
         Me.grbNavegacion.Controls.Add(Me.btnSiguienteProducto)
         Me.grbNavegacion.Controls.Add(Me.btnAnteriorProducto)
         Me.grbNavegacion.Controls.Add(Me.btnPrimeroProducto)
-        Me.grbNavegacion.Location = New System.Drawing.Point(27, 442)
+        Me.grbNavegacion.Location = New System.Drawing.Point(27, 327)
         Me.grbNavegacion.Name = "grbNavegacion"
         Me.grbNavegacion.Size = New System.Drawing.Size(421, 75)
         Me.grbNavegacion.TabIndex = 1
@@ -219,7 +219,7 @@ Partial Class Productos
         Me.grbEdicion.Controls.Add(Me.btnEliminarProducto)
         Me.grbEdicion.Controls.Add(Me.btnModificarProducto)
         Me.grbEdicion.Controls.Add(Me.btnAgregarProducto)
-        Me.grbEdicion.Location = New System.Drawing.Point(467, 442)
+        Me.grbEdicion.Location = New System.Drawing.Point(467, 327)
         Me.grbEdicion.Name = "grbEdicion"
         Me.grbEdicion.Size = New System.Drawing.Size(378, 75)
         Me.grbEdicion.TabIndex = 2
@@ -270,7 +270,7 @@ Partial Class Productos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(883, 529)
+        Me.ClientSize = New System.Drawing.Size(832, 529)
         Me.Controls.Add(Me.grbEdicion)
         Me.Controls.Add(Me.grbNavegacion)
         Me.Controls.Add(Me.grbDatos)

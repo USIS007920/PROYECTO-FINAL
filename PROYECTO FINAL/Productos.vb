@@ -10,7 +10,7 @@
     End Sub
     Sub obtenerDatos()
         dataTable = objconexion.obtenerDatos().Tables("Productos")
-
+        dataTable.PrimaryKey = New DataColumn() {dataTable.Columns("idProducto")}
         mostrarDatos()
     End Sub
 
@@ -61,26 +61,19 @@
 
     Private Sub btnAgregrarProduto_Click(sender As Object, e As EventArgs) Handles btnAgregarProducto.Click
         If btnAgregarProducto.Text = "Nuevo" Then
-            btnAgregarProducto.Text = "Guardar"
+            btnAgregarProducto.Text = "guardar"
             btnModificarProducto.Text = "Cancelar"
             accion = "nuevo"
-
             HabDescontroles(False)
             limpiarDatosProducto()
         Else
-            Dim msg = objconexion.mantenimientoDatosProducto(New String() {
-                   Me.Tag, txtCategoriaProducto.Text, txtCodigoProducto.Text, txtNombreProducto.Text, txtMarcaProducto.Text, txtDimensionesProducto.Text}
-                   , accion)
-
-
-            obtenerDatos()
             HabDescontroles(True)
-            btnAgregarProducto.Text = "Nuevo"
+            btnAgregarProducto.Text = "nuevo"
             btnModificarProducto.Text = "Modificar"
-
-            MessageBox.Show(msg, "Registro de Productos", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
+
     End Sub
+
     Private Sub HabDescontroles(ByVal estado As Boolean)
         grbDatos.Enabled = Not estado
         grbNavegacion.Enabled = estado
@@ -103,7 +96,6 @@
             HabDescontroles(False)
         Else
             obtenerDatos()
-
             HabDescontroles(True)
             btnAgregarProducto.Text = "Nuevo"
             btnModificarProducto.Text = "Modificar"
@@ -114,7 +106,7 @@
     Private Sub btnEliminarProducto_Click(sender As Object, e As EventArgs) Handles btnEliminarProducto.Click
         If (MessageBox.Show("Esta seguro de borrar a" + txtNombreProducto.Text, "Registro de producto",
                             MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes) Then
-            objconexion.mantenimientoDatosProducto(New String() {Me.Tag}, "eliminar")
+
             If posicion > 0 Then
                 posicion -= 1
             End If
@@ -122,4 +114,12 @@
         End If
 
     End Sub
+
+    Private Sub btnBuscarProducto_Click(sender As Object, e As EventArgs) Handles btnBuscarProducto.Click
+        Dim objbuscarproducto As New frmbusquedaproductos
+        objbuscarproducto.ShowDialog()
+    End Sub
+
+
+
 End Class

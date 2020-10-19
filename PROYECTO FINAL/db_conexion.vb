@@ -41,7 +41,7 @@ Public Class db_conexion
         If (executeSql(sql) > 0) Then
             msg = "Accion realizada con exito"
         Else
-            msg = "Fallo el proceso, por favor intentelo de nuevo."
+            msg = "error"
         End If
         executeSql(sql)
     End Sub
@@ -50,5 +50,6 @@ Public Class db_conexion
         micomand.CommandText = sql
         Return micomand.ExecuteNonQuery()
     End Function
+
 
 End Class
