@@ -5,7 +5,6 @@
 
 
     Private Sub frmbusquedaproductos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
         Me.ProductosTableAdapter1.Fill(Me.Db_SistemaDataSet1.Productos)
         grdbuscarproducto.DataSource = objconexion.obtenerDatos().Tables("Productos").DefaultView
     End Sub

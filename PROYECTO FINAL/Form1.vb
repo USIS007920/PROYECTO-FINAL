@@ -15,8 +15,7 @@
     End Sub
 
     Private Sub PreciosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PreciosToolStripMenuItem.Click
-        Dim objPrecios As New Precios
-
-        objPrecios.Show()
+        Dim objEmpleados As New frmEmpleados
+        objEmpleados.Show()
     End Sub
 End Class

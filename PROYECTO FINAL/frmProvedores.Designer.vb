@@ -174,13 +174,13 @@ Partial Class frmProvedores
         Me.grbDatos.Size = New System.Drawing.Size(464, 309)
         Me.grbDatos.TabIndex = 3
         Me.grbDatos.TabStop = False
-        Me.grbDatos.Text = "Datos de Productos"
+        Me.grbDatos.Text = "Datos de Provedores"
         '
         'txtNombreProvedor
         '
-        Me.txtNombreProvedor.Location = New System.Drawing.Point(79, 89)
+        Me.txtNombreProvedor.Location = New System.Drawing.Point(89, 89)
         Me.txtNombreProvedor.Name = "txtNombreProvedor"
-        Me.txtNombreProvedor.Size = New System.Drawing.Size(342, 20)
+        Me.txtNombreProvedor.Size = New System.Drawing.Size(332, 20)
         Me.txtNombreProvedor.TabIndex = 7
         '
         'lbldireccion
@@ -211,9 +211,9 @@ Partial Class frmProvedores
         '
         'txtCodigoProvedor
         '
-        Me.txtCodigoProvedor.Location = New System.Drawing.Point(70, 37)
+        Me.txtCodigoProvedor.Location = New System.Drawing.Point(89, 37)
         Me.txtCodigoProvedor.Name = "txtCodigoProvedor"
-        Me.txtCodigoProvedor.Size = New System.Drawing.Size(345, 20)
+        Me.txtCodigoProvedor.Size = New System.Drawing.Size(332, 20)
         Me.txtCodigoProvedor.TabIndex = 3
         '
         'lblCodigo

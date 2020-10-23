@@ -1,30 +1,29 @@
 ﻿Public Class frmProvedores
-
     Dim objconexion As New db_conexion()
-    Dim dataTable As New DataTable
+    Dim dataTable As DataTable
     Dim posicion As Integer
     Dim accion As String = "nuevo"
 
-    Private Sub frmClientes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub Provedor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         posicion = 0
         obtenerDatos()
     End Sub
+
     Sub obtenerDatos()
         dataTable = objconexion.obtenerDatos().Tables("Provedores")
         dataTable.PrimaryKey = New DataColumn() {dataTable.Columns("idProvedores")}
         mostrarDatos()
     End Sub
+
     Sub mostrarDatos()
         If dataTable.Rows.Count > 0 Then
-            Me.Tag = dataTable.Rows(posicion).ItemArray(0).ToString() 'ID de Cliente
+            Me.Tag = dataTable.Rows(posicion).ItemArray(0).ToString() 'ID de provedor
             txtCodigoProvedor.Text = dataTable.Rows(posicion).ItemArray(1).ToString()
             txtNombreProvedor.Text = dataTable.Rows(posicion).ItemArray(2).ToString()
             txtDireccionProvedor.Text = dataTable.Rows(posicion).ItemArray(3).ToString()
-
-
-            lblCodigo.Text = posicion + 1 & " de " & dataTable.Rows.Count
+            lblNum.Text = posicion + 1 & " de " & dataTable.Rows.Count
         Else
-            limpiarDatosProvedor()
+            limpiarDatosProvedores()
             MessageBox.Show("No hay registros que mostrar", "Registro de Provedores", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
@@ -41,7 +40,6 @@
         Else
             MessageBox.Show("Ya te encuentras en el ultimo registro.", "Registro de Provedores", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
-
     End Sub
 
     Private Sub btnAnteriorProvedor_Click(sender As Object, e As EventArgs) Handles btnAnteriorProvedor.Click
@@ -54,7 +52,7 @@
 
     End Sub
 
-    Private Sub btnUltimoProvedor_Click(sender As Object, e As EventArgs) Handles btnAgregarProvedor.Click
+    Private Sub btn_Ultimo_Provedor_Click(sender As Object, e As EventArgs) Handles btn_Ultimo_Provedor.Click
         posicion = dataTable.Rows.Count - 1
         mostrarDatos()
     End Sub
@@ -65,12 +63,13 @@
             btnModificarProvedor.Text = "Cancelar"
             accion = "nuevo"
             HabDescontroles(False)
-            limpiarDatosProvedor()
+            limpiarDatosProvedores()
         Else
             HabDescontroles(True)
             btnAgregarProvedor.Text = "nuevo"
             btnModificarProvedor.Text = "Modificar"
         End If
+
     End Sub
 
     Private Sub HabDescontroles(ByVal estado As Boolean)
@@ -79,29 +78,30 @@
         btnEliminarProvedor.Enabled = estado
         btnBuscarProvedor.Enabled = estado
     End Sub
-    Private Sub limpiarDatosProvedor()
+
+    Private Sub limpiarDatosProvedores()
         txtCodigoProvedor.Text = ""
         txtNombreProvedor.Text = ""
         txtDireccionProvedor.Text = ""
-    End Sub
 
+    End Sub
     Private Sub btnModificarProvedor_Click(sender As Object, e As EventArgs) Handles btnModificarProvedor.Click
-        If btnModificarProvedor.Text = "Modificar" Then 'Modificar
+        If btnModificarProvedor.Text = "Modificar" Then
             btnAgregarProvedor.Text = "Guardar"
             btnModificarProvedor.Text = "Cancelar"
             accion = "modificar"
             HabDescontroles(False)
-        Else 'Cancelar
+        Else
             obtenerDatos()
-
             HabDescontroles(True)
             btnAgregarProvedor.Text = "Nuevo"
             btnModificarProvedor.Text = "Modificar"
+
         End If
     End Sub
 
     Private Sub btnEliminarProvedor_Click(sender As Object, e As EventArgs) Handles btnEliminarProvedor.Click
-        If (MessageBox.Show("Esta seguro de borrar a" + txtNombreProvedor.Text, "Registro de provedores",
+        If (MessageBox.Show("Esta seguro de borrar a" + txtNombreProvedor.Text, "Registro de provedor",
                             MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes) Then
 
             If posicion > 0 Then
@@ -109,12 +109,14 @@
             End If
             obtenerDatos()
         End If
+
     End Sub
 
     Private Sub btnBuscarProvedor_Click(sender As Object, e As EventArgs) Handles btnBuscarProvedor.Click
-        Dim objbuscarProvedor As New frmBuscarProvedores
-        objbuscarProvedor.ShowDialog()
+        Dim objbuscarprovedores As New frmBuscarProvedores
+        objbuscarprovedores.ShowDialog()
     End Sub
+
 
 
 End Class

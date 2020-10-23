@@ -34,15 +34,13 @@ Partial Class frmEmpleados
         Me.btnAnteriorEmpleado = New System.Windows.Forms.Button()
         Me.btnPrimeroEmpleado = New System.Windows.Forms.Button()
         Me.grbDatos = New System.Windows.Forms.GroupBox()
-        Me.lblEmailEmpleado = New System.Windows.Forms.Label()
-        Me.txtEmailEmpleado = New System.Windows.Forms.TextBox()
         Me.lblTelefonoEmpleado = New System.Windows.Forms.Label()
         Me.txtTelefonoEmpleado = New System.Windows.Forms.TextBox()
         Me.lblDireccionEmpleado = New System.Windows.Forms.Label()
-        Me.txtDireccionEmpleado = New System.Windows.Forms.TextBox()
+        Me.txtEmailEmpleado = New System.Windows.Forms.TextBox()
         Me.lblNombreEmpleado = New System.Windows.Forms.Label()
+        Me.txtNitEmpleado = New System.Windows.Forms.TextBox()
         Me.txtNombreEmpleado = New System.Windows.Forms.TextBox()
-        Me.txtCodigoEmpleado = New System.Windows.Forms.TextBox()
         Me.lblCodigoEmpleado = New System.Windows.Forms.Label()
         Me.grbEdicion.SuspendLayout()
         Me.grbNavegacion.SuspendLayout()
@@ -180,15 +178,13 @@ Partial Class frmEmpleados
         '
         'grbDatos
         '
-        Me.grbDatos.Controls.Add(Me.lblEmailEmpleado)
-        Me.grbDatos.Controls.Add(Me.txtEmailEmpleado)
         Me.grbDatos.Controls.Add(Me.lblTelefonoEmpleado)
         Me.grbDatos.Controls.Add(Me.txtTelefonoEmpleado)
         Me.grbDatos.Controls.Add(Me.lblDireccionEmpleado)
-        Me.grbDatos.Controls.Add(Me.txtDireccionEmpleado)
+        Me.grbDatos.Controls.Add(Me.txtEmailEmpleado)
         Me.grbDatos.Controls.Add(Me.lblNombreEmpleado)
+        Me.grbDatos.Controls.Add(Me.txtNitEmpleado)
         Me.grbDatos.Controls.Add(Me.txtNombreEmpleado)
-        Me.grbDatos.Controls.Add(Me.txtCodigoEmpleado)
         Me.grbDatos.Controls.Add(Me.lblCodigoEmpleado)
         Me.grbDatos.Enabled = False
         Me.grbDatos.Location = New System.Drawing.Point(107, 7)
@@ -200,30 +196,11 @@ Partial Class frmEmpleados
         Me.grbDatos.TabStop = False
         Me.grbDatos.Text = "Datos de empledo"
         '
-        'lblEmailEmpleado
-        '
-        Me.lblEmailEmpleado.AutoSize = True
-        Me.lblEmailEmpleado.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.900001!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblEmailEmpleado.Location = New System.Drawing.Point(15, 376)
-        Me.lblEmailEmpleado.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
-        Me.lblEmailEmpleado.Name = "lblEmailEmpleado"
-        Me.lblEmailEmpleado.Size = New System.Drawing.Size(58, 17)
-        Me.lblEmailEmpleado.TabIndex = 10
-        Me.lblEmailEmpleado.Text = "EMAIL:"
-        '
-        'txtEmailEmpleado
-        '
-        Me.txtEmailEmpleado.Location = New System.Drawing.Point(121, 377)
-        Me.txtEmailEmpleado.Margin = New System.Windows.Forms.Padding(1)
-        Me.txtEmailEmpleado.Name = "txtEmailEmpleado"
-        Me.txtEmailEmpleado.Size = New System.Drawing.Size(333, 20)
-        Me.txtEmailEmpleado.TabIndex = 9
-        '
         'lblTelefonoEmpleado
         '
         Me.lblTelefonoEmpleado.AutoSize = True
         Me.lblTelefonoEmpleado.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.900001!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTelefonoEmpleado.Location = New System.Drawing.Point(15, 300)
+        Me.lblTelefonoEmpleado.Location = New System.Drawing.Point(15, 223)
         Me.lblTelefonoEmpleado.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.lblTelefonoEmpleado.Name = "lblTelefonoEmpleado"
         Me.lblTelefonoEmpleado.Size = New System.Drawing.Size(96, 17)
@@ -232,7 +209,7 @@ Partial Class frmEmpleados
         '
         'txtTelefonoEmpleado
         '
-        Me.txtTelefonoEmpleado.Location = New System.Drawing.Point(121, 301)
+        Me.txtTelefonoEmpleado.Location = New System.Drawing.Point(121, 223)
         Me.txtTelefonoEmpleado.Margin = New System.Windows.Forms.Padding(1)
         Me.txtTelefonoEmpleado.Name = "txtTelefonoEmpleado"
         Me.txtTelefonoEmpleado.Size = New System.Drawing.Size(111, 20)
@@ -242,21 +219,21 @@ Partial Class frmEmpleados
         '
         Me.lblDireccionEmpleado.AutoSize = True
         Me.lblDireccionEmpleado.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.900001!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDireccionEmpleado.Location = New System.Drawing.Point(15, 195)
+        Me.lblDireccionEmpleado.Location = New System.Drawing.Point(15, 162)
         Me.lblDireccionEmpleado.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.lblDireccionEmpleado.Name = "lblDireccionEmpleado"
-        Me.lblDireccionEmpleado.Size = New System.Drawing.Size(96, 17)
+        Me.lblDireccionEmpleado.Size = New System.Drawing.Size(52, 17)
         Me.lblDireccionEmpleado.TabIndex = 6
-        Me.lblDireccionEmpleado.Text = "DIRECCION:"
+        Me.lblDireccionEmpleado.Text = "Email:"
         '
-        'txtDireccionEmpleado
+        'txtEmailEmpleado
         '
-        Me.txtDireccionEmpleado.Location = New System.Drawing.Point(121, 154)
-        Me.txtDireccionEmpleado.Margin = New System.Windows.Forms.Padding(1)
-        Me.txtDireccionEmpleado.Multiline = True
-        Me.txtDireccionEmpleado.Name = "txtDireccionEmpleado"
-        Me.txtDireccionEmpleado.Size = New System.Drawing.Size(333, 103)
-        Me.txtDireccionEmpleado.TabIndex = 5
+        Me.txtEmailEmpleado.Location = New System.Drawing.Point(121, 154)
+        Me.txtEmailEmpleado.Margin = New System.Windows.Forms.Padding(1)
+        Me.txtEmailEmpleado.Multiline = True
+        Me.txtEmailEmpleado.Name = "txtEmailEmpleado"
+        Me.txtEmailEmpleado.Size = New System.Drawing.Size(333, 25)
+        Me.txtEmailEmpleado.TabIndex = 5
         '
         'lblNombreEmpleado
         '
@@ -265,25 +242,25 @@ Partial Class frmEmpleados
         Me.lblNombreEmpleado.Location = New System.Drawing.Point(15, 94)
         Me.lblNombreEmpleado.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.lblNombreEmpleado.Name = "lblNombreEmpleado"
-        Me.lblNombreEmpleado.Size = New System.Drawing.Size(79, 17)
+        Me.lblNombreEmpleado.Size = New System.Drawing.Size(38, 17)
         Me.lblNombreEmpleado.TabIndex = 4
-        Me.lblNombreEmpleado.Text = "NOMBRE:"
+        Me.lblNombreEmpleado.Text = "NIT:"
+        '
+        'txtNitEmpleado
+        '
+        Me.txtNitEmpleado.Location = New System.Drawing.Point(121, 95)
+        Me.txtNitEmpleado.Margin = New System.Windows.Forms.Padding(1)
+        Me.txtNitEmpleado.Name = "txtNitEmpleado"
+        Me.txtNitEmpleado.Size = New System.Drawing.Size(333, 20)
+        Me.txtNitEmpleado.TabIndex = 3
         '
         'txtNombreEmpleado
         '
-        Me.txtNombreEmpleado.Location = New System.Drawing.Point(121, 95)
+        Me.txtNombreEmpleado.Location = New System.Drawing.Point(133, 32)
         Me.txtNombreEmpleado.Margin = New System.Windows.Forms.Padding(1)
         Me.txtNombreEmpleado.Name = "txtNombreEmpleado"
-        Me.txtNombreEmpleado.Size = New System.Drawing.Size(333, 20)
-        Me.txtNombreEmpleado.TabIndex = 3
-        '
-        'txtCodigoEmpleado
-        '
-        Me.txtCodigoEmpleado.Location = New System.Drawing.Point(121, 36)
-        Me.txtCodigoEmpleado.Margin = New System.Windows.Forms.Padding(1)
-        Me.txtCodigoEmpleado.Name = "txtCodigoEmpleado"
-        Me.txtCodigoEmpleado.Size = New System.Drawing.Size(95, 20)
-        Me.txtCodigoEmpleado.TabIndex = 1
+        Me.txtNombreEmpleado.Size = New System.Drawing.Size(95, 20)
+        Me.txtNombreEmpleado.TabIndex = 1
         '
         'lblCodigoEmpleado
         '
@@ -292,9 +269,9 @@ Partial Class frmEmpleados
         Me.lblCodigoEmpleado.Location = New System.Drawing.Point(15, 35)
         Me.lblCodigoEmpleado.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.lblCodigoEmpleado.Name = "lblCodigoEmpleado"
-        Me.lblCodigoEmpleado.Size = New System.Drawing.Size(74, 17)
+        Me.lblCodigoEmpleado.Size = New System.Drawing.Size(69, 17)
         Me.lblCodigoEmpleado.TabIndex = 0
-        Me.lblCodigoEmpleado.Text = "CODIGO:"
+        Me.lblCodigoEmpleado.Text = "Nombre:"
         '
         'frmEmpleados
         '
@@ -327,14 +304,12 @@ Partial Class frmEmpleados
     Friend WithEvents btnAnteriorEmpleado As Button
     Friend WithEvents btnPrimeroEmpleado As Button
     Friend WithEvents grbDatos As GroupBox
-    Friend WithEvents lblEmailEmpleado As Label
-    Friend WithEvents txtEmailEmpleado As TextBox
     Friend WithEvents lblTelefonoEmpleado As Label
     Friend WithEvents txtTelefonoEmpleado As TextBox
     Friend WithEvents lblDireccionEmpleado As Label
-    Friend WithEvents txtDireccionEmpleado As TextBox
+    Friend WithEvents txtEmailEmpleado As TextBox
     Friend WithEvents lblNombreEmpleado As Label
+    Friend WithEvents txtNitEmpleado As TextBox
     Friend WithEvents txtNombreEmpleado As TextBox
-    Friend WithEvents txtCodigoEmpleado As TextBox
     Friend WithEvents lblCodigoEmpleado As Label
 End Class

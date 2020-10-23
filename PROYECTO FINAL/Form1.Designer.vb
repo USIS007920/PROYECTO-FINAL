@@ -60,7 +60,7 @@ Partial Class Form1
         'SalirToolStripMenuItem
         '
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(96, 22)
         Me.SalirToolStripMenuItem.Text = "Salir"
         '
         'EmpresaToolStripMenuItem
@@ -86,7 +86,7 @@ Partial Class Form1
         '
         Me.PreciosToolStripMenuItem.Name = "PreciosToolStripMenuItem"
         Me.PreciosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.PreciosToolStripMenuItem.Text = "Precios"
+        Me.PreciosToolStripMenuItem.Text = "Empleados"
         '
         'Form1
         '
