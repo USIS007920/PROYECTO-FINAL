@@ -5,7 +5,7 @@
 
     Private Sub frmbusquedaempleados_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        Me.EmpleadoTableAdapter1.fill(Me.Db_SistemaDataSet1.empleado)
+
         grdbuscarempleado.DataSource = objconexion.obtenerDatos().Tables("empleado").DefaultView
     End Sub
 
