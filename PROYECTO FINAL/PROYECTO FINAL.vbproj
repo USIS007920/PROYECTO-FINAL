@@ -106,28 +106,7 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmBusquedaCategoria.Designer.vb">
-      <DependentUpon>frmBusquedaCategoria.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmBusquedaCategoria.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmBusquedaEmpleados.Designer.vb">
-      <DependentUpon>frmBusquedaEmpleados.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmBusquedaEmpleados.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmbusquedanotacredito.Designer.vb">
-      <DependentUpon>frmbusquedanotacredito.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmbusquedanotacredito.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmBusquedaPresupuesto.Designer.vb">
-      <DependentUpon>frmBusquedaPresupuesto.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmBusquedaPresupuesto.vb">
+
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmbusquedaproductos.Designer.vb">
@@ -193,17 +172,7 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmBusquedaCategoria.resx">
-      <DependentUpon>frmBusquedaCategoria.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmBusquedaEmpleados.resx">
-      <DependentUpon>frmBusquedaEmpleados.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmbusquedanotacredito.resx">
-      <DependentUpon>frmbusquedanotacredito.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmBusquedaPresupuesto.resx">
-      <DependentUpon>frmBusquedaPresupuesto.vb</DependentUpon>
+
     </EmbeddedResource>
     <EmbeddedResource Include="frmbusquedaproductos.resx">
       <DependentUpon>frmbusquedaproductos.vb</DependentUpon>
