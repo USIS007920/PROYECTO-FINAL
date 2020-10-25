@@ -28,7 +28,7 @@ Public Class db_conexion
         Return ds
     End Function
 
-    Private Sub mantenimientoDatosProducto(ByVal datos As String(), ByVal accion As String)
+    Public Function mantenimientoDatosProductos(ByVal datos As String(), ByVal accion As String)
         Dim sql, msg As String
         Select Case accion
             Case "nuevo"
@@ -38,13 +38,27 @@ Public Class db_conexion
             Case "eliminar"
                 sql = "DELETE FROM productos WHERE idProducto'" + datos(0) + "'"
         End Select
+        micomand.Parameters("@id").Value = datos(0)
+        If accion IsNot "eliminar" Then
+            micomand.Parameters("@categoria").Value = datos(1)
+            micomand.Parameters("@cod").Value = datos(2)
+            micomand.Parameters("@nom").Value = datos(3)
+            micomand.Parameters("@mar").Value = datos(4)
+            micomand.Parameters("@dim").Value = datos(5)
+        Else 'Accion es eliminar
+            mantenimientoDatosProductos(datos, accion)
+        End If
         If (executeSql(sql) > 0) Then
-            msg = "Accion realizada con exito"
+            If accion IsNot "eliminar" Then
+                mantenimientoDatosProductos(datos, accion)
+            End If
+            msg = "exito"
         Else
             msg = "error"
         End If
-        executeSql(sql)
-    End Sub
+
+        Return msg
+    End Function
 
     Public Function mantenimientoDatosProvedores(ByVal datos As String(), ByVal accion As String)
         Dim sql, msg As String
@@ -99,6 +113,38 @@ Public Class db_conexion
         If (executeSql(sql) > 0) Then
             If accion IsNot "eliminar" Then
                 mantenimientoDatosEmpleados(datos, accion)
+            End If
+            msg = "exito"
+        Else
+            msg = "error"
+        End If
+
+        Return msg
+    End Function
+
+    Public Function mantenimientoDatosNotaCredito(ByVal datos As String(), ByVal accion As String)
+        Dim sql, msg As String
+        Select Case accion
+            Case "nuevo"
+                sql = "INSERT INTO Nota Credito (datos,fecha,descripcion,impuestos,montototal) VALUES(@datos,@fecha,@des,@imp,@monttl)"
+            Case "modificar"
+                sql = "UPDATE Nota Credito SET datos=@datos,fecha=@fecha,descripcion=@des,impuestos=@imp,montototal=@monttl WHERE idNota Credito=@id"
+            Case "eliminar"
+                sql = "DELETE FROM nota credito WHERE idNotaCredito=@id"
+        End Select
+        micomand.Parameters("@id").Value = datos(0)
+        If accion IsNot "eliminar" Then
+            micomand.Parameters("@datos").Value = datos(1)
+            micomand.Parameters("@fecha").Value = datos(2)
+            micomand.Parameters("@des").Value = datos(3)
+            micomand.Parameters("@imp").Value = datos(4)
+            micomand.Parameters("@monttl").Value = datos(5)
+        Else 'Accion es eliminar
+            mantenimientoDatosNotaCredito(datos, accion)
+        End If
+        If (executeSql(sql) > 0) Then
+            If accion IsNot "eliminar" Then
+                mantenimientoDatosNotaCredito(datos, accion)
             End If
             msg = "exito"
         Else

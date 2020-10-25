@@ -35,8 +35,8 @@ Partial Class frmbusquedaproductos
         Me.Db_SistemaDataSet = New PROYECTO_FINAL.Db_SistemaDataSet()
         Me.lblbuscarproducto = New System.Windows.Forms.Label()
         Me.txtbuscarproductos = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.btnseleccionarProducto = New System.Windows.Forms.Button()
+        Me.btnCancelarProducto = New System.Windows.Forms.Button()
         Me.ProductosTableAdapter = New PROYECTO_FINAL.Db_SistemaDataSetTableAdapters.ProductosTableAdapter()
         Me.ProductosTableAdapter1 = New PROYECTO_FINAL.Db_SistemaDataSet1TableAdapters.ProductosTableAdapter()
         CType(Me.grdbuscarproducto, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -134,25 +134,25 @@ Partial Class frmbusquedaproductos
         Me.txtbuscarproductos.Size = New System.Drawing.Size(716, 20)
         Me.txtbuscarproductos.TabIndex = 2
         '
-        'Button1
+        'btnseleccionarProducto
         '
-        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button1.Location = New System.Drawing.Point(12, 328)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(133, 30)
-        Me.Button1.TabIndex = 3
-        Me.Button1.Text = "Seleccionar Producto"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnseleccionarProducto.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnseleccionarProducto.Location = New System.Drawing.Point(506, 341)
+        Me.btnseleccionarProducto.Name = "btnseleccionarProducto"
+        Me.btnseleccionarProducto.Size = New System.Drawing.Size(133, 30)
+        Me.btnseleccionarProducto.TabIndex = 3
+        Me.btnseleccionarProducto.Text = "Seleccionar Producto"
+        Me.btnseleccionarProducto.UseVisualStyleBackColor = True
         '
-        'Button2
+        'btnCancelarProducto
         '
-        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button2.Location = New System.Drawing.Point(615, 328)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(133, 30)
-        Me.Button2.TabIndex = 4
-        Me.Button2.Text = "Cancelar"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btnCancelarProducto.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnCancelarProducto.Location = New System.Drawing.Point(655, 341)
+        Me.btnCancelarProducto.Name = "btnCancelarProducto"
+        Me.btnCancelarProducto.Size = New System.Drawing.Size(133, 30)
+        Me.btnCancelarProducto.TabIndex = 4
+        Me.btnCancelarProducto.Text = "Cancelar"
+        Me.btnCancelarProducto.UseVisualStyleBackColor = True
         '
         'ProductosTableAdapter
         '
@@ -167,8 +167,8 @@ Partial Class frmbusquedaproductos
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnCancelarProducto)
+        Me.Controls.Add(Me.btnseleccionarProducto)
         Me.Controls.Add(Me.txtbuscarproductos)
         Me.Controls.Add(Me.lblbuscarproducto)
         Me.Controls.Add(Me.grdbuscarproducto)
@@ -187,8 +187,8 @@ Partial Class frmbusquedaproductos
     Friend WithEvents grdbuscarproducto As DataGridView
     Friend WithEvents lblbuscarproducto As Label
     Friend WithEvents txtbuscarproductos As TextBox
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
+    Friend WithEvents btnseleccionarProducto As Button
+    Friend WithEvents btnCancelarProducto As Button
     Friend WithEvents Db_SistemaDataSet As Db_SistemaDataSet
     Friend WithEvents ProductosBindingSource As BindingSource
     Friend WithEvents ProductosTableAdapter As Db_SistemaDataSetTableAdapters.ProductosTableAdapter

@@ -37,7 +37,7 @@
     End Sub
 
     Private Sub btnSiguienteEmpleado_Click(sender As Object, e As EventArgs) Handles btnSiguienteEmpleado.Click
-        If posicion < DataTable.Rows.Count - 1 Then
+        If posicion < datatable.Rows.Count - 1 Then
             posicion += 1
             mostrarDatos()
         Else
