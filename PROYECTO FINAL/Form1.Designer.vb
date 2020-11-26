@@ -22,7 +22,6 @@ Partial Class Form1
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ArchivoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -31,9 +30,6 @@ Partial Class Form1
         Me.ProvedoresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProductosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PreciosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EmpresaToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.NotaCreditoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PresupuestoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -47,7 +43,7 @@ Partial Class Form1
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ArchivoToolStripMenuItem, Me.EmpresaToolStripMenuItem, Me.EmpresaToolStripMenuItem1})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ArchivoToolStripMenuItem, Me.EmpresaToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(800, 24)
@@ -77,50 +73,28 @@ Partial Class Form1
         'ProvedoresToolStripMenuItem
         '
         Me.ProvedoresToolStripMenuItem.Name = "ProvedoresToolStripMenuItem"
-        Me.ProvedoresToolStripMenuItem.Size = New System.Drawing.Size(133, 22)
+        Me.ProvedoresToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ProvedoresToolStripMenuItem.Text = "Provedores"
         '
         'ProductosToolStripMenuItem
         '
         Me.ProductosToolStripMenuItem.Name = "ProductosToolStripMenuItem"
-        Me.ProductosToolStripMenuItem.Size = New System.Drawing.Size(133, 22)
+        Me.ProductosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ProductosToolStripMenuItem.Text = "Productos"
         '
         'PreciosToolStripMenuItem
         '
         Me.PreciosToolStripMenuItem.Name = "PreciosToolStripMenuItem"
-        Me.PreciosToolStripMenuItem.Size = New System.Drawing.Size(133, 22)
+        Me.PreciosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.PreciosToolStripMenuItem.Text = "Empleados"
-        '
-        'EmpresaToolStripMenuItem1
-        '
-        Me.EmpresaToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NotaCreditoToolStripMenuItem, Me.PresupuestoToolStripMenuItem})
-        Me.EmpresaToolStripMenuItem1.Name = "EmpresaToolStripMenuItem1"
-        Me.EmpresaToolStripMenuItem1.Size = New System.Drawing.Size(51, 20)
-        Me.EmpresaToolStripMenuItem1.Text = "Pagos"
-        '
-        'NotaCreditoToolStripMenuItem
-        '
-        Me.NotaCreditoToolStripMenuItem.Name = "NotaCreditoToolStripMenuItem"
-        Me.NotaCreditoToolStripMenuItem.Size = New System.Drawing.Size(142, 22)
-        Me.NotaCreditoToolStripMenuItem.Text = "Nota Credito"
-        '
-        'PresupuestoToolStripMenuItem
-        '
-        Me.PresupuestoToolStripMenuItem.Name = "PresupuestoToolStripMenuItem"
-        Me.PresupuestoToolStripMenuItem.Size = New System.Drawing.Size(142, 22)
-        Me.PresupuestoToolStripMenuItem.Text = "Presupuesto"
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.MenuStrip1)
-        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "Form1"
         Me.Text = "Form1"
@@ -139,7 +113,4 @@ Partial Class Form1
     Friend WithEvents ProvedoresToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ProductosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PreciosToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents EmpresaToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents NotaCreditoToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents PresupuestoToolStripMenuItem As ToolStripMenuItem
 End Class

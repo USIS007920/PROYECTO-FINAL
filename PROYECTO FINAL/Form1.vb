@@ -14,13 +14,8 @@
         objproductos.Show()
     End Sub
 
-    Private Sub NotaCreditoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NotaCreditoToolStripMenuItem.Click
-        Dim objnotacredito As New frmbusquedanotacredito
-        objnotacredito.Show()
-    End Sub
-
-    Private Sub PresupuestoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PresupuestoToolStripMenuItem.Click
-        Dim objPresupuesto As New frmbusquedapresupuesto
-        objPresupuesto.Show()
+    Private Sub PreciosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PreciosToolStripMenuItem.Click
+        Dim objEmpleados As New frmEmpleados
+        objEmpleados.Show()
     End Sub
 End Class

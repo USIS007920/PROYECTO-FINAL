@@ -1,35 +1,23 @@
-﻿Public Class frmBusquedaEmpleados
+﻿Public Class frmbusquedaempleados
     Dim objconexion As New db_conexion
-    Public _idC As Integer
 
-    Private Sub btnSeleccionarEmpleados_Click(sender As Object, e As EventArgs) Handles btnseleccionarEmpleados.Click
-        seleccionarEmpleados()
-    End Sub
+
+
     Private Sub frmbusquedaempleados_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        grdbuscarempleados.DataSource = objconexion.obtenerDatos().Tables("Empleados").DefaultView
+
+        Me.EmpleadoTableAdapter1.fill(Me.Db_SistemaDataSet1.empleado)
+        grdbuscarempleado.DataSource = objconexion.obtenerDatos().Tables("empleado").DefaultView
     End Sub
 
-    Private Sub txtbuscarEmpleados_KeyUp(sender As Object, e As KeyEventArgs) Handles txtbuscarempleados.KeyUp
-        FiltrardatosEmpleados(txtbuscarempleados.Text)
-        If e.KeyCode = 13 Then
-            seleccionarEmpleados()
-        End If
+
+    Private Sub txtbuscarempleado_KeyUp(sender As Object, e As KeyEventArgs) Handles txtbuscarempleados.KeyUp
+        Filtrardatosproductos(txtbuscarempleados.Text)
     End Sub
-    Private Sub seleccionarEmpleados()
-        _idC = grdbuscarempleados.CurrentRow.Cells("idEmpleado").Value.ToString()
-        Close()
-    End Sub
-    Private Sub FiltrardatosEmpleados(ByVal valor As String)
+
+    Private Sub Filtrardatosproductos(ByVal valor As String)
         Dim bs As New BindingSource
-        bs.DataSource = grdbuscarempleados.DataSource
+        bs.DataSource = grdbuscarempleado.DataSource
         bs.Filter = "nombre like '%" & valor & "%'"
-        grdbuscarempleados.DataSource = bs
+        grdbuscarempleado.DataSource = bs
     End Sub
-
-    Private Sub btnsCancelarempleados_Click(sender As Object, e As EventArgs) Handles btnCancelarEmpleado.Click
-        _idC = 0
-        Close()
-    End Sub
-
-
 End Class

@@ -44,7 +44,6 @@ Partial Class Productos
         Me.btnEliminarProducto = New System.Windows.Forms.Button()
         Me.btnModificarProducto = New System.Windows.Forms.Button()
         Me.btnAgregarProducto = New System.Windows.Forms.Button()
-        Me.btnBuscarCategoriaProducto = New System.Windows.Forms.Button()
         Me.grbDatos.SuspendLayout()
         Me.grbNavegacion.SuspendLayout()
         Me.grbEdicion.SuspendLayout()
@@ -52,7 +51,6 @@ Partial Class Productos
         '
         'grbDatos
         '
-        Me.grbDatos.Controls.Add(Me.btnBuscarCategoriaProducto)
         Me.grbDatos.Controls.Add(Me.txtCategoriaProducto)
         Me.grbDatos.Controls.Add(Me.txtDimensionesProducto)
         Me.grbDatos.Controls.Add(Me.lblDimensiones)
@@ -268,16 +266,6 @@ Partial Class Productos
         Me.btnAgregarProducto.Text = "Nuevo"
         Me.btnAgregarProducto.UseVisualStyleBackColor = True
         '
-        'btnBuscarCategoriaProducto
-        '
-        Me.btnBuscarCategoriaProducto.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBuscarCategoriaProducto.Location = New System.Drawing.Point(259, 20)
-        Me.btnBuscarCategoriaProducto.Name = "btnBuscarCategoriaProducto"
-        Me.btnBuscarCategoriaProducto.Size = New System.Drawing.Size(175, 27)
-        Me.btnBuscarCategoriaProducto.TabIndex = 16
-        Me.btnBuscarCategoriaProducto.Text = "Buscar Categoria"
-        Me.btnBuscarCategoriaProducto.UseVisualStyleBackColor = True
-        '
         'Productos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -319,5 +307,4 @@ Partial Class Productos
     Friend WithEvents btnBuscarProducto As Button
     Friend WithEvents btnEliminarProducto As Button
     Friend WithEvents btnModificarProducto As Button
-    Friend WithEvents btnBuscarCategoriaProducto As Button
 End Class
