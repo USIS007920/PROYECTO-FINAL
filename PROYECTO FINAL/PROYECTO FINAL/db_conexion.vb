@@ -25,6 +25,13 @@ Public Class db_conexion
         miAdapter.SelectCommand = micomand
         miAdapter.Fill(ds, "Productos")
 
+        micomand.CommandText = "select * from empleados"
+        miAdapter.SelectCommand = micomand
+        miAdapter.Fill(ds, "empleados")
+
+        micomand.CommandText = "select * from Provedores"
+        miAdapter.SelectCommand = micomand
+        miAdapter.Fill(ds, "Provedores")
         Return ds
     End Function
 
