@@ -18,4 +18,9 @@
         Dim objEmpleados As New frmEmpleados
         objEmpleados.Show()
     End Sub
+
+    Private Sub FacturacionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FacturacionToolStripMenuItem.Click
+        Dim objVentas As New frmVentas
+        objVentas.Show()
+    End Sub
 End Class
