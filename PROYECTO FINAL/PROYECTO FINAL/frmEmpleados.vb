@@ -12,26 +12,27 @@
 
     Sub obtenerDatos()
         datatable = objconexion.obtenerDatos().Tables("Empleados")
-        datatable.PrimaryKey = New DataColumn() {datatable.Columns("idEmpleado")}
+        datatable.PrimaryKey = New DataColumn() {datatable.Columns("idempleado")}
         mostrarDatos()
     End Sub
 
     Sub mostrarDatos()
         If datatable.Rows.Count > 0 Then
             Me.Tag = datatable.Rows(posicion).ItemArray(0).ToString() 'id empleado
-            txtNombreEmpleado.Text = datatable.Rows(posicion).ItemArray(1).ToString()
-            txtNitEmpleado.Text = datatable.Rows(posicion).ItemArray(2).ToString()
-            txtEmailEmpleado.Text = datatable.Rows(posicion).ItemArray(3).ToString()
-            txtTelefonoEmpleado.Text = datatable.Rows(posicion).ItemArray(4).ToString()
+            txtcodigoempleado.Text = datatable.Rows(posicion).ItemArray(1).ToString()
+            txtNombreEmpleado.Text = datatable.Rows(posicion).ItemArray(2).ToString()
+            txtnumeroempleado.Text = datatable.Rows(posicion).ItemArray(3).ToString()
+            txtdireccionempleado.Text = datatable.Rows(posicion).ItemArray(4).ToString()
+            txtEmailEmpleado.Text = datatable.Rows(posicion).ItemArray(4).ToString()
 
             lblNombreEmpleado.Text = posicion + 1 & " de " & datatable.Rows.Count
         Else
-            limpiarDatosProducto()
+            limpiarDatosEmpleados()
             MessageBox.Show("No hay registros que mostrar", "Registro de Empleado", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
 
-    Private Sub btnPrimeroProducto_Click(sender As Object, e As EventArgs) Handles btnPrimeroEmpleado.Click
+    Private Sub btnPrimeroEmpleado_Click(sender As Object, e As EventArgs) Handles btnPrimeroEmpleado.Click
         posicion = 0
         mostrarDatos()
     End Sub
@@ -61,17 +62,28 @@
     End Sub
 
     Private Sub btnAgregrarEmpleado_Click(sender As Object, e As EventArgs) Handles btnAgregarEmpleado.Click
-        If btnAgregarEmpleado.Text = "Nuevo" Then
-            btnAgregarEmpleado.Text = "guardar"
+        If btnAgregarEmpleado.Text = "Nuevo" Then 'Nuevo
+            btnAgregarEmpleado.Text = "Guardar"
             btnModificarEmpleado.Text = "Cancelar"
             accion = "nuevo"
+
             HabDescontroles(False)
-            limpiarDatosProducto()
-        Else
-            HabDescontroles(True)
-            btnAgregarEmpleado.Text = "nuevo"
-            btnModificarEmpleado.Text = "Modificar"
+            limpiarDatosEmpleados()
+        Else 'Guardar
+            Dim msg = objconexion.mantenimientoDatosEmpleados(New String() {
+                Me.Tag, txtEmailEmpleado.Text, txtNombreEmpleado.Text, txtdireccionempleado.Text, txtnumeroempleado.Text, txtEmailEmpleado.Text
+            }, accion)
+            If msg = "error" Then
+                MessageBox.Show("Error al intentar guardar el registro, por favor intente nuevamente.", "Registro de Empleados",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Else
+                obtenerDatos()
+                HabDescontroles(True)
+                btnAgregarEmpleado.Text = "Nuevo"
+                btnModificarEmpleado.Text = "Modificar"
+            End If
         End If
+
 
     End Sub
 
@@ -82,11 +94,11 @@
         btnBuscarEmpleado.Enabled = estado
     End Sub
 
-    Private Sub limpiarDatosProducto()
+    Private Sub limpiarDatosEmpleados()
+        txtcodigoempleado.Text = ""
         txtNombreEmpleado.Text = ""
-        txtNombreEmpleado.Text = ""
-        txtNitEmpleado.Text = ""
-        txtEmailEmpleado.Text = ""
+        txtnumeroempleado.Text = ""
+        txtdireccionempleado.Text = ""
         txtEmailEmpleado.Text = ""
     End Sub
     Private Sub btnModificarEmpleado_Click(sender As Object, e As EventArgs) Handles btnModificarEmpleado.Click
@@ -105,7 +117,7 @@
     End Sub
 
     Private Sub btnEliminarEmpleado_Click(sender As Object, e As EventArgs) Handles btnEliminarEmpleado.Click
-        If (MessageBox.Show("Esta seguro de borrar a" + txtNitEmpleado.Text, "Registro de Empleado",
+        If (MessageBox.Show("Esta seguro de borrar a" + txtNombreEmpleado.Text, "Registro de Empleado",
                             MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes) Then
 
             If posicion > 0 Then
@@ -120,5 +132,6 @@
         Dim objbuscarempleados As New frmbusquedaempleados
         objbuscarempleados.ShowDialog()
     End Sub
+
 
 End Class

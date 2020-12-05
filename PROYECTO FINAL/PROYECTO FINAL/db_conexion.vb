@@ -88,18 +88,19 @@ Public Class db_conexion
         Dim sql, msg As String
         Select Case accion
             Case "nuevo"
-                sql = "INSERT INTO empleados (nombre,nit,email,telefono  ) VALUES(@cod,@nom,@dir)"
+                sql = "INSERT INTO empleados (codigo,nombre,telefono, direccion, email) VALUES(@cod,@nom,@dir)"
             Case "modificar"
-                sql = "UPDATE empleados SET codigo=@cod,nombre=@nom,direccion=@dir WHERE idEmpleados=@id"
+                sql = "UPDATE empleados SET codigo=@cod,nombre=@nom,telefono=@tel,direccion=@dir,email=@email WHERE idEmpleados=@id"
             Case "eliminar"
                 sql = "DELETE FROM empleados WHERE idEmpleados=@id"
         End Select
         micomand.Parameters("@id").Value = datos(0)
         If accion IsNot "eliminar" Then
-            micomand.Parameters("@nom").Value = datos(1)
-            micomand.Parameters("@nit").Value = datos(2)
-            micomand.Parameters("@email").Value = datos(3)
-            micomand.Parameters("@tel").Value = datos(4)
+            micomand.Parameters("@ncod").Value = datos(1)
+            micomand.Parameters("@nom").Value = datos(2)
+            micomand.Parameters("@tel").Value = datos(3)
+            micomand.Parameters("@dir").Value = datos(4)
+            micomand.Parameters("@email").Value = datos(5)
         Else 'Accion es eliminar
             mantenimientoDatosEmpleados(datos, accion)
         End If

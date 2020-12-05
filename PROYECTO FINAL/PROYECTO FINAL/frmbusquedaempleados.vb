@@ -4,8 +4,6 @@
 
 
     Private Sub frmbusquedaempleados_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-
         grdbuscarempleado.DataSource = objconexion.obtenerDatos().Tables("empleado").DefaultView
     End Sub
 

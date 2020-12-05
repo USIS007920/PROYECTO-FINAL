@@ -63,7 +63,9 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
@@ -92,6 +94,9 @@
     <Compile Include="Db_SistemaDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <DependentUpon>Db_SistemaDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Db_SistemaDataSet.vb">
       <DependentUpon>Db_SistemaDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Db_SistemaDataSet1.Designer.vb">
