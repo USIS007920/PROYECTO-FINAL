@@ -23,4 +23,9 @@
         Dim objVentas As New frmVentas
         objVentas.Show()
     End Sub
+
+    Private Sub ClientesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClientesToolStripMenuItem.Click
+        Dim objClientes As New frmClientes
+        objClientes.Show()
+    End Sub
 End Class

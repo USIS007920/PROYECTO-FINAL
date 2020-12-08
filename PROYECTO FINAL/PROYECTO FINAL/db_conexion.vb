@@ -35,7 +35,7 @@ Public Class db_conexion
         Return ds
     End Function
 
-    Private Sub mantenimientoDatosProducto(ByVal datos As String(), ByVal accion As String)
+    Public Function mantenimientoDatosProducto(ByVal datos As String(), ByVal accion As String)
         Dim sql, msg As String
         Select Case accion
             Case "nuevo"
@@ -45,13 +45,22 @@ Public Class db_conexion
             Case "eliminar"
                 sql = "DELETE FROM productos WHERE idProducto'" + datos(0) + "'"
         End Select
-        If (executeSql(sql) > 0) Then
-            msg = "Accion realizada con exito"
+        micomand.Parameters("@id").Value = datos(0)
+        If accion IsNot "eliminar" Then
+            micomand.Parameters("@idCategoria").Value = datos(1)
+            micomand.Parameters("@cod").Value = datos(2)
+            micomand.Parameters("@nom").Value = datos(3)
+            micomand.Parameters("@mar").Value = datos(4)
+            micomand.Parameters("@dim").Value = datos(5)
+        End If
+        If executeSql(sql) > 0 Then
+            msg = "exito"
         Else
             msg = "error"
         End If
-        executeSql(sql)
-    End Sub
+
+        Return msg
+    End Function
 
     Public Function mantenimientoDatosProvedores(ByVal datos As String(), ByVal accion As String)
         Dim sql, msg As String
@@ -115,6 +124,60 @@ Public Class db_conexion
 
         Return msg
     End Function
+
+    Public Function mantenimientoDatosCliente(ByVal datos As String(), ByVal accion As String)
+        Dim sql, msg As String
+        Select Case accion
+            Case "nuevo"
+                sql = "INSERT INTO clientes (codigo,nombre,direccion) VALUES(@cod,@nom,@dir)"
+            Case "modificar"
+                sql = "UPDATE clientes SET codigo=@cod,nombre=@nom,direccion=@dir WHERE idCliente=@id"
+            Case "eliminar"
+                sql = "DELETE FROM clientes WHERE idCliente=@id"
+        End Select
+        micomand.Parameters("@id").Value = datos(0)
+        If accion IsNot "eliminar" Then
+            micomand.Parameters("@cod").Value = datos(1)
+            micomand.Parameters("@nom").Value = datos(2)
+            micomand.Parameters("@dir").Value = datos(3)
+            micomand.Parameters("@tel").Value = datos(4)
+            micomand.Parameters("@ema").Value = datos(5)
+        Else 'Accion es eliminar
+            mantenimientoDatosContacto(datos, accion)
+        End If
+        If (executeSql(sql) > 0) Then
+            If accion IsNot "eliminar" Then
+                mantenimientoDatosContacto(datos, accion)
+            End If
+            msg = "exito"
+        Else
+            msg = "error"
+        End If
+
+        Return msg
+    End Function
+
+    Private Sub mantenimientoDatosContacto(ByVal datos As String(), ByVal accion As String)
+        Dim sql, msg As String
+        Select Case accion
+            Case "nuevo"
+                micomand.Connection = miConexion
+                micomand.CommandText = "select MAX(idCliente) AS idCliente from clientes"
+                datos(0) = micomand.ExecuteScalar().ToString()
+
+                sql = "INSERT INTO contactos (idPersona,telefono,email) VALUES(@id,@tel,@ema)"
+            Case "modificar"
+                sql = "UPDATE contactos SET telefono=@tel,email=@ema WHERE idPersona=@id"
+            Case "eliminar"
+                sql = "DELETE FROM contactos WHERE idPersona=@id"
+        End Select
+        micomand.Parameters("@id").Value = datos(0)
+        If accion IsNot "eliminar" Then
+            micomand.Parameters("@tel").Value = datos(4)
+            micomand.Parameters("@ema").Value = datos(5)
+        End If
+        executeSql(sql)
+    End Sub
     Private Function executeSql(ByVal sql As String)
         micomand.Connection = miConexion
         micomand.CommandText = sql

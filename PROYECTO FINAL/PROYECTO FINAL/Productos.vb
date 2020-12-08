@@ -12,6 +12,14 @@
         dataTable = objconexion.obtenerDatos().Tables("Productos")
         dataTable.PrimaryKey = New DataColumn() {dataTable.Columns("idProducto")}
         mostrarDatos()
+
+        txtCategoriaProducto.DataSource = objconexion.obtenerDatos().Tables("categorias").DefaultView()
+        txtCategoriaProducto.DisplayMember = "categoria"
+        txtCategoriaProducto.ValueMember = "categorias.idCategoria"
+
+        txtCategoriaProducto.AutoCompleteMode = AutoCompleteMode.Suggest
+        txtCategoriaProducto.AutoCompleteSource = AutoCompleteSource.ListItems
+        mostrarDatos()
     End Sub
 
 
@@ -61,16 +69,26 @@
     End Sub
 
     Private Sub btnAgregrarProduto_Click(sender As Object, e As EventArgs) Handles btnAgregarProducto.Click
-        If btnAgregarProducto.Text = "Nuevo" Then
-            btnAgregarProducto.Text = "guardar"
+        If btnAgregarProducto.Text = "Nuevo" Then 'Nuevo
+            btnAgregarProducto.Text = "Guardar"
             btnModificarProducto.Text = "Cancelar"
             accion = "nuevo"
+
             HabDescontroles(False)
             limpiarDatosProducto()
-        Else
-            HabDescontroles(True)
-            btnAgregarProducto.Text = "nuevo"
-            btnModificarProducto.Text = "Modificar"
+        Else 'Guardar
+            Dim msg = objconexion.mantenimientoDatosProducto(New String() {
+                Me.Tag, txtCategoriaProducto.SelectedValue, txtCodigoProducto.Text, txtNombreProducto.Text, txtMarcaProducto.Text, txtDimensionesProducto.Text
+            }, accion)
+            If msg = "error" Then
+                MessageBox.Show("Error al intentar guardar el registro, por favor intente nuevamente.", "Registro de Productos",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Else
+                obtenerDatos()
+                HabDescontroles(True)
+                btnAgregarProducto.Text = "Nuevo"
+                btnModificarProducto.Text = "Modificar"
+            End If
         End If
 
     End Sub
@@ -107,7 +125,7 @@
     Private Sub btnEliminarProducto_Click(sender As Object, e As EventArgs) Handles btnEliminarProducto.Click
         If (MessageBox.Show("Esta seguro de borrar a" + txtNombreProducto.Text, "Registro de producto",
                             MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes) Then
-
+            Dim msg = objconexion.mantenimientoDatosProducto(New String() {Me.Tag}, "eliminar")
             If posicion > 0 Then
                 posicion -= 1
             End If

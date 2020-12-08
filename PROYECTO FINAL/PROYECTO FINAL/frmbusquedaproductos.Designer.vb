@@ -35,7 +35,7 @@ Partial Class frmbusquedaproductos
         Me.Db_SistemaDataSet = New PROYECTO_FINAL.Db_SistemaDataSet()
         Me.lblbuscarproducto = New System.Windows.Forms.Label()
         Me.txtbuscarproductos = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnSeleccionarProducto = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.ProductosTableAdapter = New PROYECTO_FINAL.Db_SistemaDataSetTableAdapters.ProductosTableAdapter()
         Me.ProductosTableAdapter1 = New PROYECTO_FINAL.Db_SistemaDataSet1TableAdapters.ProductosTableAdapter()
@@ -134,15 +134,15 @@ Partial Class frmbusquedaproductos
         Me.txtbuscarproductos.Size = New System.Drawing.Size(716, 20)
         Me.txtbuscarproductos.TabIndex = 2
         '
-        'Button1
+        'btnSeleccionarProducto
         '
-        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button1.Location = New System.Drawing.Point(505, 328)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(133, 30)
-        Me.Button1.TabIndex = 3
-        Me.Button1.Text = "Seleccionar Producto"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnSeleccionarProducto.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnSeleccionarProducto.Location = New System.Drawing.Point(505, 328)
+        Me.btnSeleccionarProducto.Name = "btnSeleccionarProducto"
+        Me.btnSeleccionarProducto.Size = New System.Drawing.Size(133, 30)
+        Me.btnSeleccionarProducto.TabIndex = 3
+        Me.btnSeleccionarProducto.Text = "Seleccionar Producto"
+        Me.btnSeleccionarProducto.UseVisualStyleBackColor = True
         '
         'Button2
         '
@@ -168,7 +168,7 @@ Partial Class frmbusquedaproductos
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnSeleccionarProducto)
         Me.Controls.Add(Me.txtbuscarproductos)
         Me.Controls.Add(Me.lblbuscarproducto)
         Me.Controls.Add(Me.grdbuscarproducto)
@@ -187,7 +187,7 @@ Partial Class frmbusquedaproductos
     Friend WithEvents grdbuscarproducto As DataGridView
     Friend WithEvents lblbuscarproducto As Label
     Friend WithEvents txtbuscarproductos As TextBox
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnSeleccionarProducto As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents Db_SistemaDataSet As Db_SistemaDataSet
     Friend WithEvents ProductosBindingSource As BindingSource

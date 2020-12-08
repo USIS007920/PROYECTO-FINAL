@@ -1,2 +1,9 @@
-﻿Partial Class Db_SistemaDataSet
+﻿
+
+
+Partial Public Class Db_SistemaDataSet
+End Class
+
+
+Partial Public Class Db_SistemaDataSet
 End Class
