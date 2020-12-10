@@ -1,4 +1,4 @@
-﻿Public Class frmBuscarCategorias
+﻿Public Class FrmBuscarCategorias
     Dim objConexion As New db_conexion
     Public _idC As Integer
     Private Sub frmBuscarCategorias_Load(sender As Object, e As EventArgs) Handles MyBase.Load

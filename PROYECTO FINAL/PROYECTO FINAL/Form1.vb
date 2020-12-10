@@ -30,9 +30,22 @@
     End Sub
 
     Private Sub CategoriasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CategoriasToolStripMenuItem.Click
-        Dim objCategorias As New frmBuscarCategorias
+        Dim objCategorias As New FrmBuscarCategorias
         objCategorias.Show()
     End Sub
 
+    Private Sub ListadoDeProvedoresToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListadoDeProvedoresToolStripMenuItem.Click
+        Dim objListadodeProvedores As New ListadodeProvedores
+        objListadodeProvedores.Show()
+    End Sub
 
+    Private Sub ListadoDeClientesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListadoDeClientesToolStripMenuItem.Click
+        Dim objListadodeClientes As New ListadodeClientes
+        objListadodeClientes.Show()
+    End Sub
+
+    Private Sub ListadoDeProductosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListadoDeProductosToolStripMenuItem.Click
+        Dim objListadodeProductos As New ListadodeProductos
+        objListadodeProductos.Show()
+    End Sub
 End Class

@@ -6,27 +6,25 @@
 
     Private Sub Productos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         posicion = 0
-        obtenerDatos()
+        ObtenerDatos()
     End Sub
-    Sub obtenerDatos()
+    Sub ObtenerDatos()
         dataTable = objconexion.obtenerDatos().Tables("Productos")
         dataTable.PrimaryKey = New DataColumn() {dataTable.Columns("idProducto")}
-        mostrarDatos()
 
-        txtCategoriaProducto.DataSource = objconexion.obtenerDatos().Tables("categorias").DefaultView()
-        txtCategoriaProducto.DisplayMember = "categoria"
-        txtCategoriaProducto.ValueMember = "categorias.idCategoria"
+        cboCategoriaProducto.DataSource = objconexion.obtenerDatos().Tables("categoria").DefaultView()
+        cboCategoriaProducto.DisplayMember = "categoria"
+        cboCategoriaProducto.ValueMember = "categoria.idcategoria"
 
-        txtCategoriaProducto.AutoCompleteMode = AutoCompleteMode.Suggest
-        txtCategoriaProducto.AutoCompleteSource = AutoCompleteSource.ListItems
+        cboCategoriaProducto.AutoCompleteMode = AutoCompleteMode.Suggest
+        cboCategoriaProducto.AutoCompleteSource = AutoCompleteSource.ListItems
         mostrarDatos()
     End Sub
-
 
     Sub mostrarDatos()
         If dataTable.Rows.Count > 0 Then
             Me.Tag = dataTable.Rows(posicion).ItemArray(0).ToString()
-            txtCategoriaProducto.Text = dataTable.Rows(posicion).ItemArray(1).ToString()
+            cboCategoriaProducto.Text = dataTable.Rows(posicion).ItemArray(1).ToString()
             txtCodigoProducto.Text = dataTable.Rows(posicion).ItemArray(2).ToString()
             txtNombreProducto.Text = dataTable.Rows(posicion).ItemArray(3).ToString()
             txtMarcaProducto.Text = dataTable.Rows(posicion).ItemArray(4).ToString()
@@ -78,13 +76,13 @@
             limpiarDatosProducto()
         Else 'Guardar
             Dim msg = objconexion.mantenimientoDatosProducto(New String() {
-                Me.Tag, txtCategoriaProducto.SelectedValue, txtCodigoProducto.Text, txtNombreProducto.Text, txtMarcaProducto.Text, txtDimensionesProducto.Text
+                Me.Tag, cboCategoriaProducto.SelectedValue, txtCodigoProducto.Text, txtNombreProducto.Text, txtMarcaProducto.Text, txtDimensionesProducto.Text
             }, accion)
             If msg = "error" Then
                 MessageBox.Show("Error al intentar guardar el registro, por favor intente nuevamente.", "Registro de Productos",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error)
             Else
-                obtenerDatos()
+                ObtenerDatos()
                 HabDescontroles(True)
                 btnAgregarProducto.Text = "Nuevo"
                 btnModificarProducto.Text = "Modificar"
@@ -101,7 +99,7 @@
     End Sub
 
     Private Sub limpiarDatosProducto()
-        txtCategoriaProducto.Text = ""
+        cboCategoriaProducto.Text = ""
         txtCodigoProducto.Text = ""
         txtNombreProducto.Text = ""
         txtMarcaProducto.Text = ""
@@ -114,7 +112,7 @@
             accion = "modificar"
             HabDescontroles(False)
         Else
-            obtenerDatos()
+            ObtenerDatos()
             HabDescontroles(True)
             btnAgregarProducto.Text = "Nuevo"
             btnModificarProducto.Text = "Modificar"
@@ -129,7 +127,7 @@
             If posicion > 0 Then
                 posicion -= 1
             End If
-            obtenerDatos()
+            ObtenerDatos()
         End If
 
     End Sub
@@ -139,6 +137,11 @@
         objbuscarproducto.ShowDialog()
     End Sub
 
-
-
+    Private Sub btnBuscarCategoriaProducto_Click(sender As Object, e As EventArgs) Handles btnBuscarCategoriaProducto.Click
+        Dim objBuscarCategoriaProducto As New FrmBuscarCategorias
+        objBuscarCategoriaProducto.ShowDialog()
+        If objBuscarCategoriaProducto._idC > 0 Then
+            cboCategoriaProducto.SelectedValue = objBuscarCategoriaProducto._idC
+        End If
+    End Sub
 End Class

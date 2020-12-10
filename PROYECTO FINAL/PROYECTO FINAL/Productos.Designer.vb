@@ -23,7 +23,7 @@ Partial Class Productos
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.grbDatos = New System.Windows.Forms.GroupBox()
-        Me.txtCategoriaProducto = New System.Windows.Forms.ComboBox()
+        Me.cboCategoriaProducto = New System.Windows.Forms.ComboBox()
         Me.txtDimensionesProducto = New System.Windows.Forms.TextBox()
         Me.lblDimensiones = New System.Windows.Forms.Label()
         Me.txtMarcaProducto = New System.Windows.Forms.TextBox()
@@ -44,6 +44,7 @@ Partial Class Productos
         Me.btnEliminarProducto = New System.Windows.Forms.Button()
         Me.btnModificarProducto = New System.Windows.Forms.Button()
         Me.btnAgregarProducto = New System.Windows.Forms.Button()
+        Me.btnBuscarCategoriaProducto = New System.Windows.Forms.Button()
         Me.grbDatos.SuspendLayout()
         Me.grbNavegacion.SuspendLayout()
         Me.grbEdicion.SuspendLayout()
@@ -51,7 +52,8 @@ Partial Class Productos
         '
         'grbDatos
         '
-        Me.grbDatos.Controls.Add(Me.txtCategoriaProducto)
+        Me.grbDatos.Controls.Add(Me.btnBuscarCategoriaProducto)
+        Me.grbDatos.Controls.Add(Me.cboCategoriaProducto)
         Me.grbDatos.Controls.Add(Me.txtDimensionesProducto)
         Me.grbDatos.Controls.Add(Me.lblDimensiones)
         Me.grbDatos.Controls.Add(Me.txtMarcaProducto)
@@ -68,13 +70,13 @@ Partial Class Productos
         Me.grbDatos.TabStop = False
         Me.grbDatos.Text = "Datos de Productos"
         '
-        'txtCategoriaProducto
+        'cboCategoriaProducto
         '
-        Me.txtCategoriaProducto.FormattingEnabled = True
-        Me.txtCategoriaProducto.Location = New System.Drawing.Point(117, 25)
-        Me.txtCategoriaProducto.Name = "txtCategoriaProducto"
-        Me.txtCategoriaProducto.Size = New System.Drawing.Size(121, 21)
-        Me.txtCategoriaProducto.TabIndex = 10
+        Me.cboCategoriaProducto.FormattingEnabled = True
+        Me.cboCategoriaProducto.Location = New System.Drawing.Point(117, 25)
+        Me.cboCategoriaProducto.Name = "cboCategoriaProducto"
+        Me.cboCategoriaProducto.Size = New System.Drawing.Size(121, 21)
+        Me.cboCategoriaProducto.TabIndex = 10
         '
         'txtDimensionesProducto
         '
@@ -266,6 +268,17 @@ Partial Class Productos
         Me.btnAgregarProducto.Text = "Nuevo"
         Me.btnAgregarProducto.UseVisualStyleBackColor = True
         '
+        'btnBuscarCategoriaProducto
+        '
+        Me.btnBuscarCategoriaProducto.Font = New System.Drawing.Font("Arial Rounded MT Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBuscarCategoriaProducto.Location = New System.Drawing.Point(242, 19)
+        Me.btnBuscarCategoriaProducto.Margin = New System.Windows.Forms.Padding(1)
+        Me.btnBuscarCategoriaProducto.Name = "btnBuscarCategoriaProducto"
+        Me.btnBuscarCategoriaProducto.Size = New System.Drawing.Size(157, 29)
+        Me.btnBuscarCategoriaProducto.TabIndex = 13
+        Me.btnBuscarCategoriaProducto.Text = "Buscar Categoria"
+        Me.btnBuscarCategoriaProducto.UseVisualStyleBackColor = True
+        '
         'Productos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -297,7 +310,7 @@ Partial Class Productos
     Friend WithEvents lblDimensiones As Label
     Friend WithEvents txtMarcaProducto As TextBox
     Friend WithEvents lblMarca As Label
-    Friend WithEvents txtCategoriaProducto As ComboBox
+    Friend WithEvents cboCategoriaProducto As ComboBox
     Friend WithEvents btn_Ultimo_Producto As Button
     Friend WithEvents btnSiguienteProducto As Button
     Friend WithEvents btnAnteriorProducto As Button
@@ -307,4 +320,5 @@ Partial Class Productos
     Friend WithEvents btnBuscarProducto As Button
     Friend WithEvents btnEliminarProducto As Button
     Friend WithEvents btnModificarProducto As Button
+    Friend WithEvents btnBuscarCategoriaProducto As Button
 End Class
