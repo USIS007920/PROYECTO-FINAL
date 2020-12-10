@@ -28,4 +28,11 @@
         Dim objClientes As New frmClientes
         objClientes.Show()
     End Sub
+
+    Private Sub CategoriasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CategoriasToolStripMenuItem.Click
+        Dim objCategorias As New frmBuscarCategorias
+        objCategorias.Show()
+    End Sub
+
+
 End Class
