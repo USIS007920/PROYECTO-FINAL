@@ -48,4 +48,24 @@
         Dim objListadodeProductos As New ListadodeProductos
         objListadodeProductos.Show()
     End Sub
+
+    Private Sub ListadoDeVentasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListadoDeVentasToolStripMenuItem.Click
+        Dim objListadodeVentas As New ListadodeVentas
+        objListadodeVentas.Show()
+    End Sub
+
+    Private Sub ListadoDePagoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListadoDePagoToolStripMenuItem.Click
+        Dim objListadodePago As New ListadodePago
+        objListadodePago.Show()
+    End Sub
+
+    Private Sub ListadoDeDetalleDeVentasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListadoDeDetalleDeVentasToolStripMenuItem.Click
+        Dim objListadodeDetalledeVentas As New ListadodeDetalledeVentas
+        objListadodeDetalledeVentas.Show()
+    End Sub
+
+    Private Sub ListadoDeTipoFacturaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListadoDeTipoFacturaToolStripMenuItem.Click
+        Dim objListadodeTipoFactura As New ListadodeTipoFactura
+        objListadodeTipoFactura.Show()
+    End Sub
 End Class

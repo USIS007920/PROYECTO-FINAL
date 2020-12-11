@@ -189,6 +189,18 @@
     <Compile Include="ListadodeClientes.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ListadodeDetalledeVentas.Designer.vb">
+      <DependentUpon>ListadodeDetalledeVentas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ListadodeDetalledeVentas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListadodePago.Designer.vb">
+      <DependentUpon>ListadodePago.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ListadodePago.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ListadodeProductos.Designer.vb">
       <DependentUpon>ListadodeProductos.vb</DependentUpon>
     </Compile>
@@ -199,6 +211,18 @@
       <DependentUpon>ListadodeProvedores.vb</DependentUpon>
     </Compile>
     <Compile Include="ListadodeProvedores.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListadodeTipoFactura.Designer.vb">
+      <DependentUpon>ListadodeTipoFactura.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ListadodeTipoFactura.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListadodeVentas.Designer.vb">
+      <DependentUpon>ListadodeVentas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ListadodeVentas.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -258,11 +282,23 @@
     <EmbeddedResource Include="ListadodeClientes.resx">
       <DependentUpon>ListadodeClientes.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ListadodeDetalledeVentas.resx">
+      <DependentUpon>ListadodeDetalledeVentas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListadodePago.resx">
+      <DependentUpon>ListadodePago.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ListadodeProductos.resx">
       <DependentUpon>ListadodeProductos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListadodeProvedores.resx">
       <DependentUpon>ListadodeProvedores.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListadodeTipoFactura.resx">
+      <DependentUpon>ListadodeTipoFactura.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListadodeVentas.resx">
+      <DependentUpon>ListadodeVentas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -273,9 +309,13 @@
     <EmbeddedResource Include="Productos.resx">
       <DependentUpon>Productos.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reporte.rdlc" />
     <EmbeddedResource Include="ReporteClientes.rdlc" />
+    <EmbeddedResource Include="ReportedeDetallesdeVentas.rdlc" />
+    <EmbeddedResource Include="ReportedePago.rdlc" />
+    <EmbeddedResource Include="ReporteProductos.rdlc" />
     <EmbeddedResource Include="ReporteProvedores.rdlc" />
+    <EmbeddedResource Include="ReporteTipoFactura.rdlc" />
+    <EmbeddedResource Include="ReporteVentas.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Db_SistemaDataSet.xsc">
