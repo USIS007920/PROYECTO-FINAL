@@ -178,18 +178,21 @@ Partial Class Form1
         '
         'ListadoDePagoToolStripMenuItem
         '
+        Me.ListadoDePagoToolStripMenuItem.Image = CType(resources.GetObject("ListadoDePagoToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ListadoDePagoToolStripMenuItem.Name = "ListadoDePagoToolStripMenuItem"
         Me.ListadoDePagoToolStripMenuItem.Size = New System.Drawing.Size(220, 22)
         Me.ListadoDePagoToolStripMenuItem.Text = "Listado de Pago"
         '
         'ListadoDeDetalleDeVentasToolStripMenuItem
         '
+        Me.ListadoDeDetalleDeVentasToolStripMenuItem.Image = CType(resources.GetObject("ListadoDeDetalleDeVentasToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ListadoDeDetalleDeVentasToolStripMenuItem.Name = "ListadoDeDetalleDeVentasToolStripMenuItem"
         Me.ListadoDeDetalleDeVentasToolStripMenuItem.Size = New System.Drawing.Size(220, 22)
         Me.ListadoDeDetalleDeVentasToolStripMenuItem.Text = "Listado de Detalle de Ventas"
         '
         'ListadoDeTipoFacturaToolStripMenuItem
         '
+        Me.ListadoDeTipoFacturaToolStripMenuItem.Image = CType(resources.GetObject("ListadoDeTipoFacturaToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ListadoDeTipoFacturaToolStripMenuItem.Name = "ListadoDeTipoFacturaToolStripMenuItem"
         Me.ListadoDeTipoFacturaToolStripMenuItem.Size = New System.Drawing.Size(220, 22)
         Me.ListadoDeTipoFacturaToolStripMenuItem.Text = "Listado de Tipo Factura"
