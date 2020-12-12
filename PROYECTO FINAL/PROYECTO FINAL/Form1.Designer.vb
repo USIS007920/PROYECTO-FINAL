@@ -124,7 +124,7 @@ Partial Class Form1
         '
         Me.FacturacionToolStripMenuItem.Image = CType(resources.GetObject("FacturacionToolStripMenuItem.Image"), System.Drawing.Image)
         Me.FacturacionToolStripMenuItem.Name = "FacturacionToolStripMenuItem"
-        Me.FacturacionToolStripMenuItem.Size = New System.Drawing.Size(136, 22)
+        Me.FacturacionToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.FacturacionToolStripMenuItem.Text = "Facturacion"
         '
         'InventarioToolStripMenuItem
@@ -138,7 +138,7 @@ Partial Class Form1
         '
         Me.CategoriasToolStripMenuItem.Image = CType(resources.GetObject("CategoriasToolStripMenuItem.Image"), System.Drawing.Image)
         Me.CategoriasToolStripMenuItem.Name = "CategoriasToolStripMenuItem"
-        Me.CategoriasToolStripMenuItem.Size = New System.Drawing.Size(130, 22)
+        Me.CategoriasToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.CategoriasToolStripMenuItem.Text = "Categorias"
         '
         'ReportesToolStripMenuItem
@@ -152,33 +152,34 @@ Partial Class Form1
         '
         Me.ListadoDeProvedoresToolStripMenuItem.Image = CType(resources.GetObject("ListadoDeProvedoresToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ListadoDeProvedoresToolStripMenuItem.Name = "ListadoDeProvedoresToolStripMenuItem"
-        Me.ListadoDeProvedoresToolStripMenuItem.Size = New System.Drawing.Size(190, 22)
+        Me.ListadoDeProvedoresToolStripMenuItem.Size = New System.Drawing.Size(220, 22)
         Me.ListadoDeProvedoresToolStripMenuItem.Text = "Listado de Provedores"
         '
         'ListadoDeClientesToolStripMenuItem
         '
         Me.ListadoDeClientesToolStripMenuItem.Image = CType(resources.GetObject("ListadoDeClientesToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ListadoDeClientesToolStripMenuItem.Name = "ListadoDeClientesToolStripMenuItem"
-        Me.ListadoDeClientesToolStripMenuItem.Size = New System.Drawing.Size(190, 22)
+        Me.ListadoDeClientesToolStripMenuItem.Size = New System.Drawing.Size(220, 22)
         Me.ListadoDeClientesToolStripMenuItem.Text = "Listado de Clientes"
         '
         'ListadoDeProductosToolStripMenuItem
         '
         Me.ListadoDeProductosToolStripMenuItem.Image = CType(resources.GetObject("ListadoDeProductosToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ListadoDeProductosToolStripMenuItem.Name = "ListadoDeProductosToolStripMenuItem"
-        Me.ListadoDeProductosToolStripMenuItem.Size = New System.Drawing.Size(190, 22)
+        Me.ListadoDeProductosToolStripMenuItem.Size = New System.Drawing.Size(220, 22)
         Me.ListadoDeProductosToolStripMenuItem.Text = "Listado de Productos"
         '
         'ListadoDeVentasToolStripMenuItem
         '
+        Me.ListadoDeVentasToolStripMenuItem.Image = CType(resources.GetObject("ListadoDeVentasToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ListadoDeVentasToolStripMenuItem.Name = "ListadoDeVentasToolStripMenuItem"
-        Me.ListadoDeVentasToolStripMenuItem.Size = New System.Drawing.Size(190, 22)
+        Me.ListadoDeVentasToolStripMenuItem.Size = New System.Drawing.Size(220, 22)
         Me.ListadoDeVentasToolStripMenuItem.Text = "Listado de Ventas"
         '
         'ListadoDePagoToolStripMenuItem
         '
         Me.ListadoDePagoToolStripMenuItem.Name = "ListadoDePagoToolStripMenuItem"
-        Me.ListadoDePagoToolStripMenuItem.Size = New System.Drawing.Size(190, 22)
+        Me.ListadoDePagoToolStripMenuItem.Size = New System.Drawing.Size(220, 22)
         Me.ListadoDePagoToolStripMenuItem.Text = "Listado de Pago"
         '
         'ListadoDeDetalleDeVentasToolStripMenuItem
