@@ -67,22 +67,24 @@ Partial Class Form1
         'ArchivoToolStripMenuItem
         '
         Me.ArchivoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SalirToolStripMenuItem})
+        Me.ArchivoToolStripMenuItem.Image = CType(resources.GetObject("ArchivoToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ArchivoToolStripMenuItem.Name = "ArchivoToolStripMenuItem"
-        Me.ArchivoToolStripMenuItem.Size = New System.Drawing.Size(60, 20)
+        Me.ArchivoToolStripMenuItem.Size = New System.Drawing.Size(76, 20)
         Me.ArchivoToolStripMenuItem.Text = "Archivo"
         '
         'SalirToolStripMenuItem
         '
         Me.SalirToolStripMenuItem.Image = CType(resources.GetObject("SalirToolStripMenuItem.Image"), System.Drawing.Image)
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(96, 22)
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.SalirToolStripMenuItem.Text = "Salir"
         '
         'EmpresaToolStripMenuItem
         '
         Me.EmpresaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ProductosToolStripMenuItem, Me.ProvedoresToolStripMenuItem, Me.PreciosToolStripMenuItem, Me.ClientesToolStripMenuItem})
+        Me.EmpresaToolStripMenuItem.Image = CType(resources.GetObject("EmpresaToolStripMenuItem.Image"), System.Drawing.Image)
         Me.EmpresaToolStripMenuItem.Name = "EmpresaToolStripMenuItem"
-        Me.EmpresaToolStripMenuItem.Size = New System.Drawing.Size(64, 20)
+        Me.EmpresaToolStripMenuItem.Size = New System.Drawing.Size(80, 20)
         Me.EmpresaToolStripMenuItem.Text = "Empresa"
         '
         'ProductosToolStripMenuItem
@@ -116,8 +118,9 @@ Partial Class Form1
         'VentasToolStripMenuItem
         '
         Me.VentasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FacturacionToolStripMenuItem})
+        Me.VentasToolStripMenuItem.Image = CType(resources.GetObject("VentasToolStripMenuItem.Image"), System.Drawing.Image)
         Me.VentasToolStripMenuItem.Name = "VentasToolStripMenuItem"
-        Me.VentasToolStripMenuItem.Size = New System.Drawing.Size(53, 20)
+        Me.VentasToolStripMenuItem.Size = New System.Drawing.Size(69, 20)
         Me.VentasToolStripMenuItem.Text = "Ventas"
         '
         'FacturacionToolStripMenuItem
@@ -130,8 +133,9 @@ Partial Class Form1
         'InventarioToolStripMenuItem
         '
         Me.InventarioToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CategoriasToolStripMenuItem})
+        Me.InventarioToolStripMenuItem.Image = CType(resources.GetObject("InventarioToolStripMenuItem.Image"), System.Drawing.Image)
         Me.InventarioToolStripMenuItem.Name = "InventarioToolStripMenuItem"
-        Me.InventarioToolStripMenuItem.Size = New System.Drawing.Size(72, 20)
+        Me.InventarioToolStripMenuItem.Size = New System.Drawing.Size(88, 20)
         Me.InventarioToolStripMenuItem.Text = "Inventario"
         '
         'CategoriasToolStripMenuItem
@@ -144,8 +148,9 @@ Partial Class Form1
         'ReportesToolStripMenuItem
         '
         Me.ReportesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ListadoDeProvedoresToolStripMenuItem, Me.ListadoDeClientesToolStripMenuItem, Me.ListadoDeProductosToolStripMenuItem, Me.ListadoDeVentasToolStripMenuItem, Me.ListadoDePagoToolStripMenuItem, Me.ListadoDeDetalleDeVentasToolStripMenuItem, Me.ListadoDeTipoFacturaToolStripMenuItem})
+        Me.ReportesToolStripMenuItem.Image = CType(resources.GetObject("ReportesToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ReportesToolStripMenuItem.Name = "ReportesToolStripMenuItem"
-        Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(65, 20)
+        Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(81, 20)
         Me.ReportesToolStripMenuItem.Text = "Reportes"
         '
         'ListadoDeProvedoresToolStripMenuItem
