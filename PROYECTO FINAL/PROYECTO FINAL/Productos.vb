@@ -12,9 +12,7 @@
         dataTable = objconexion.obtenerDatos().Tables("Productos")
         dataTable.PrimaryKey = New DataColumn() {dataTable.Columns("idProducto")}
 
-        cboCategoriaProducto.DataSource = objconexion.obtenerDatos().Tables("categoria").DefaultView()
-        cboCategoriaProducto.DisplayMember = "categoria"
-        cboCategoriaProducto.ValueMember = "categoria.idcategoria"
+
 
         cboCategoriaProducto.AutoCompleteMode = AutoCompleteMode.Suggest
         cboCategoriaProducto.AutoCompleteSource = AutoCompleteSource.ListItems
